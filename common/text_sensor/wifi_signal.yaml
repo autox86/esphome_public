@@ -1,5 +1,0 @@
-platform: wifi_signal
-name: ${device_name} WiFi Signal Strength
-icon: mdi:signal-variant
-entity_category: diagnostic
-update_interval: 600s
