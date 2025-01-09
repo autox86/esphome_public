@@ -1,5 +1,0 @@
-platform: version
-name: ${device_name} ESPHome Version
-hide_timestamp: true
-icon: mdi:information-outline
-entity_category: diagnostic
