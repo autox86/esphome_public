@@ -1,0 +1,43 @@
+#Enable Home Assistant API
+api:
+  password: !secret api_pass2
+  #no reboot in case HA is down - can require full reboot when HA is back
+  reboot_timeout: 0s
+ota:
+  - platform: esphome
+    password: !secret ota_pass
+    on_error:
+      - button.press: restart_button
+
+safe_mode:
+
+wifi:
+  #https://esphome.io/components/wifi.html#power-save-mode
+  power_save_mode: none
+  #No reboot if Wifi is missing - can require full reboot when wifi is back
+  reboot_timeout: 0s
+  domain: "${domain}"
+  # enable wifi ap with ridiculous timeout so it does not normally turn on.
+  ap:
+    ap_timeout: 2147483647ms  # maximum 32 bit value.  About 3.5 weeks in milliseconds.
+
+  networks:
+    - ssid: !secret wifi_ssid
+      password: !secret wifi_pass
+    - ssid: !secret wifi_ssid_eg
+      password: !secret wifi_pass_eg
+    
+    #https://esphome.io/components/wifi.html#connecting-to-multiple-networks
+    #Instead using a AP, using a Rescue Network, so you can span a AP 
+    #with your mobile and ESP is connecting to the same
+    - ssid: "rescue"
+      password: "safemysoul"
+
+
+#Enable Web server
+web_server:
+  port: 80
+  version: 3
+  
+# https://esphome.io/components/captive_portal.html
+captive_portal:
