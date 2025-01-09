@@ -1,0 +1,5 @@
+# Switch to restart the shutter
+platform: restart
+id: restart_button
+name: "${device_name} Restart"
+entity_category: diagnostic
