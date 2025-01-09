@@ -1,0 +1,4 @@
+platform: uptime
+id: uptime_raw
+update_interval: 60s
+entity_category: diagnostic
