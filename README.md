@@ -1,6 +1,8 @@
-A quick upload of the andeca.yaml and andecaplus.yaml.
+A quick upload of the andeca.yaml and anpentaplus.yaml.
+More info see:
+https://quinled.info/analog-led-dimming/#AnalogBoards
 
-When cloning make sure to have all your secrets.yaml in /esphome
+When cloning make sure to have your secrets.yaml in /esphome
 Entries should look like:
 
 
