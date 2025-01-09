@@ -1,4 +1,4 @@
-A quick upload about the andeca.yaml and andecaplus.yaml.
+A quick upload of the andeca.yaml and andecaplus.yaml.
 
 When cloning make sure to have all your secrets.yaml in /esphome
 Entries should look like:
