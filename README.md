@@ -3,6 +3,7 @@ More info see:
 https://quinled.info/analog-led-dimming/#AnalogBoards
 
 When cloning make sure to have your secrets.yaml in /esphome
+
 Entries should look like:
 
 ```
