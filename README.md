@@ -2,7 +2,7 @@ A quick upload of the andeca.yaml and anpentaplus.yaml.
 More info see:
 https://quinled.info/analog-led-dimming/#AnalogBoards
 
-When cloning make sure to have your secrets.yaml in /esphome
+When using make sure to have your /esphome/secrets.yaml (if you want to modify it directly: /common/base/wifi.yaml)
 
 Entries should look like:
 
