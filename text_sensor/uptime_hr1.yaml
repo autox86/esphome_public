@@ -1,1 +1,25 @@
-
+#Does not work with ESP-IDF
+platform: template
+name: ${device_name} Uptime
+icon: mdi:clock-start
+lambda: |-
+  int seconds = (id(uptime_raw).state);
+  int days = seconds / (24 * 3600);
+  seconds = seconds % (24 * 3600);
+  int hours = seconds / 3600;
+  seconds = seconds % 3600;
+  int minutes = seconds /  60;
+  seconds = seconds % 60;
+  if ( days > 3650 ) {
+    return { "Starting up" };
+  } else if ( days ) {
+    return { (to_string(days) +"d " + to_string(hours) +"h " + to_string(minutes) +"m "+ to_string(seconds) +"s").c_str() };
+  } else if ( hours ) {
+    return { (to_string(hours) +"h " + to_string(minutes) +"m "+ to_string(seconds) +"s").c_str() };
+  } else if ( minutes ) {
+    return { (to_string(minutes) +"m "+ to_string(seconds) +"s").c_str() };
+  } else {
+    return { (to_string(seconds) +"s").c_str() };
+  }
+entity_category: diagnostic
+update_interval: 240s
